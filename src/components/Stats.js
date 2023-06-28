@@ -37,8 +37,8 @@ const StatsText = ({ children }) => (
       title: '13%',
       content: (
         <>
-          <StatsText>Farms</StatsText> in North America has chosen NewLife™ as
-          their management solution
+          <StatsText>Alcohol</StatsText> in the Chili's Margeritas that she only
+          needs one sip of to get drunk
         </>
       ),
     },
@@ -46,8 +46,8 @@ const StatsText = ({ children }) => (
       title: '250M+',
       content: (
         <>
-          <StatsText>Plants</StatsText> currently connected and monitored by the
-          NewLife™ software
+          <StatsText>Pictures</StatsText> of Espeon and Umbreon on a certain website
+          that rhymes with "mule sturdy floor"
         </>
       ),
     },
@@ -63,7 +63,7 @@ export default function JordanStats() {
             flex={1}
             color={'jordan.200'}
             justify={{ lg: 'center' }}
-            py={{ base: 4, md: 20, xl: 60 }}>
+            py={{ base: 4, md: 10, xl: 20 }}>
             <Box mb={{ base: 8, md: 20 }}>
               <Text
                 fontFamily={'heading'}
