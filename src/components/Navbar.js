@@ -47,7 +47,10 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg="jordan.100" px={10}>
+      <Box bg="jordan.100" px={10}
+      borderBottomWidth={2}
+      borderStyle={'solid'}
+      borderColor="jordan.300">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

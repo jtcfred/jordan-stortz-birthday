@@ -1,0 +1,54 @@
+import {
+    Box,
+    Heading,
+    Container,
+    Text,
+    Button,
+    Stack,
+} from '@chakra-ui/react';
+
+export default function QuizCTA() {
+    return (
+        <>
+            <Container maxW={'3xl'} minH={"70vh"}>
+                <Stack
+                    as={Box}
+                    textAlign={'center'}
+                    spacing={{ base: 8, md: 14 }}
+                    py={{ base: 20, md: 36 }}>
+                    <Heading
+                        fontWeight={600}
+                        fontSize={{ base: '4xl', sm: '5xl', md: '6xl', lg: '100px' }}
+                        lineHeight={'110%'}
+                        color="jordan.300">
+                        It's time for <br />
+                        <Text as={'span'} color={'green.400'}>
+                            Jordan's Birthday Quiz
+                        </Text>
+                    </Heading>
+                    <Text color={'white'} fontSize="xl">
+                        I have written an action packed Jordan birthday quiz
+                        to put to the test your working knowledge of Jordan Stortz.
+                        She kinda has a lot going on so don't be suprised if there
+                        is stuff you don't know.
+                    </Text>
+                    <Button
+                        colorScheme={'jordan.100'}
+                        fontSize={{ base: '2xl', sm: '4xl', md: '6xl', lg: '100px' }}
+                        p={{base: "lg", lg: "50px"}}
+                        bg={'green.400'}
+                        color="jordan.200"
+                        rounded={'full'}
+                        px={6}
+                        _hover={{
+                            bg: 'jordan.300',
+                            transform: "scale(1.1)"
+                        }}
+                        >
+                        Get Started
+                    </Button>
+                </Stack>
+            </Container>
+        </>
+    );
+}

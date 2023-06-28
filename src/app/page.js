@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { Box, Heading, Center, Flex } from '@chakra-ui/react'
 import JordanStats from "@/components/Stats.js"
+import Timeline from "@/components/Timeline.js"
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
       </Flex>
 
       <JordanStats/>
+
+      <Timeline/>
 
     </main>
   )
