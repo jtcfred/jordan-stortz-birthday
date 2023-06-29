@@ -23,5 +23,5 @@ export async function GET(request) {
         },
       ];
 
-    return new Response(JSON.stringify(wishes));
+    return new Response(JSON.stringify(testimonials));
 }
