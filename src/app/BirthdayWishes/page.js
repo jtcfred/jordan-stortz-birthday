@@ -1,4 +1,5 @@
 'use client'
+import React, { useEffect, useState } from "react"
 import {
   Box,
   Flex,
@@ -9,26 +10,6 @@ import {
   chakra,
 } from '@chakra-ui/react';
 
-const testimonials = [
-  {
-    heading: 'Efficient Collaborating',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.',
-    name: 'Jane Cooper',
-    title: 'CEO at ABC Corporation',
-  },
-  {
-    heading: 'Intuitive Design',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.',
-    name: 'John Doe',
-    title: 'Designer',
-  },
-  {
-    heading: 'Mindblowing Service',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.',
-    name: 'Emily Smith',
-    title: 'Customer Support',
-  },
-];
 
 const Testimonial = ({ children }) => {
   return <Box>{children}</Box>;
@@ -82,6 +63,18 @@ const TestimonialText = ({ children }) => {
 };
 
 export default function WithSpeechBubbles() {
+  const [wishes, setWishes] = useState([]);
+
+  useEffect(() => {
+    // Fetch testimonials from the API
+    fetch('/api/Wishes')
+      .then((response) => response.json())
+      .then((data) => setWishes(data))
+      .catch((error) => {
+        console.error('Error fetching wishes:', error);
+      });
+  }, []);
+
   return (
     <Box bg="jordan.200">
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
@@ -97,7 +90,7 @@ export default function WithSpeechBubbles() {
           direction={{ base: 'column', md: 'row' }}
           spacing={{ base: 10, md: 4, lg: 10 }}
         >
-          {testimonials.map((testimonial, index) => (
+          {wishes.map((testimonial, index) => (
             <Testimonial key={index}>
               <TestimonialContent>
                 <TestimonialHeading>{testimonial.heading}</TestimonialHeading>
