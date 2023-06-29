@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { chakra, Box, Card, CardHeader, CardBody, Heading, Container, Button, Text } from '@chakra-ui/react'
+import { Flex, Box, Card, CardHeader, CardBody, Heading, Container, Button, Text } from '@chakra-ui/react'
 import QuizCTA from "@/components/QuizCTA"
 import React, { useState } from "react"
 import data from "./data.js"
@@ -8,10 +8,23 @@ import JordanStats from '@/components/Stats.js'
 
 export default function BirthdayQuiz() {
   
+  const [showQuiz, setShowQuiz] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowQuiz(true);
+  };
+
   return (
     <main>
-        {/* <QuizCTA/> */}
-        <Quiz/>
+      <>
+      {
+        !showQuiz ? (
+          <QuizCTA handleClick={handleButtonClick}/>
+        ) : (
+          <Quiz/>
+        )
+      }
+      </>
     </main>
   )
 }
@@ -72,7 +85,7 @@ const onAnswerSelected = (answer, idx) => {
 
   return (
     <Container maxWidth={{base: "md", lg: "6xl"}} minH="70vh">
-      <Box border="2px solid" borderColor="jordan.300" borderRadius="lg">
+      <Box border="2px solid" borderColor="jordan.300" borderRadius="lg" m={{base: "3", lg: "20"}}>
         <Card bg="jordan.200">
           <CardHeader color="jordan.100">
             <Heading size="3xl">Jordan Quiz</Heading>
@@ -94,11 +107,11 @@ const onAnswerSelected = (answer, idx) => {
                   </Card>
                 ))}
                 {checked ? (
-                  <Button onClick={nextQuestion}>
+                  <Button onClick={nextQuestion} bg="jordan.100" color="jordan.200" _hover={{bg: "jordan.300", transform: "scale(1.1)"}}>
                     {activeQuestion === question.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 ) : (
-                  <Button onClick={nextQuestion} isDisabled={true}>
+                  <Button onClick={nextQuestion} bg="jordan.100" color="jordan.200" isDisabled={true}>
                     {' '}
                     {activeQuestion === question.length - 1 ? 'Finish' : 'Next'}
                   </Button>
@@ -106,8 +119,8 @@ const onAnswerSelected = (answer, idx) => {
                 </>
                 ) : (
               <>
-                <Heading size="lg" color="white" textAlign={"center"} pb={4}>Overall {(result.score / 25) * 100}%</Heading>
-                <Box bg="jordan.100" borderRadius={"lg"}>
+                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>Overall {(result.score / (questions.length * 5)) * 100}%</Heading>
+                <Box bg="jordan.100" color="jordan.200" borderRadius={"lg"}>
                   <Text p="3" fontSize="xl">
                     Total Questions: {questions.length}
                   </Text>
@@ -121,6 +134,13 @@ const onAnswerSelected = (answer, idx) => {
                    Wrong Answers: {result.wrongAnswers}
                   </Text>
                 </Box>
+                <Flex justifyContent="center">
+                  <Button bg="jordan.100" color="jordan.200" justifyContent="center" m={{base: "3"}} _hover={{bg: "jordan.300", transform: "scale(1.1)"}} onClick={()=> {
+                    location.reload();
+                  }}>
+                    Retry Quiz
+                  </Button>
+                </Flex>
               </>
             )}
             

@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 const theme = extendTheme({
   colors: {
     jordan: {
-      100: "#558b6e",
+      100: "#68D391",
       200: "#264653",
       300: "#E9C46A",
       400: "#F4A261",
