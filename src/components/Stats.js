@@ -1,3 +1,4 @@
+'use client'
 import {
   Stack,
   Container,
@@ -29,7 +30,7 @@ const StatsText = ({ children }) => (
       content: (
         <>
           <StatsText>Hurting Tummy</StatsText> on account of her lactose intolerance
-          and IBS making her God's strongest soldier
+          and IBS making her God&apos;s strongest soldier
         </>
       ),
     },
@@ -37,7 +38,7 @@ const StatsText = ({ children }) => (
       title: '13%',
       content: (
         <>
-          <StatsText>Alcohol</StatsText> in the Chili's Margeritas that she only
+          <StatsText>Alcohol</StatsText> in the Chili&apos;s Margeritas that she only
           needs one sip of to get drunk
         </>
       ),
@@ -47,7 +48,7 @@ const StatsText = ({ children }) => (
       content: (
         <>
           <StatsText>Pictures</StatsText> of Espeon and Umbreon on a certain website
-          that rhymes with "mule sturdy floor"
+          that rhymes with &quot;mule sturdy floor&quot;
         </>
       ),
     },
@@ -82,7 +83,7 @@ export default function JordanStats() {
               </Heading>
               <Text fontSize={'xl'} color={'jordan.200'}>
                 and one would hopefully think that she accomplished some stuff
-                in the time since her last birthday. Let's take a look at some
+                in the time since her last birthday. Let&apos;s take a look at some
                 of the Hall of Fame numbers that she put up since July 2022.
               </Text>
             </Box>

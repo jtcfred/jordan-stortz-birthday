@@ -21,16 +21,16 @@ export default function QuizCTA({ handleClick }) {
                         fontSize={{ base: '4xl', sm: '5xl', md: '6xl', lg: '100px' }}
                         lineHeight={'110%'}
                         color="jordan.300">
-                        It's time for <br />
+                        It&apos;s time for <br />
                         <Text as={'span'} color={'jordan.100'}>
-                            Jordan's Birthday Quiz
+                            Jordan&apos;s Birthday Quiz
                         </Text>
                     </Heading>
                     <Text color={'white'} fontSize="xl">
                         I have written an action packed Jordan birthday quiz
                         to put to the test your working knowledge of Jordan Stortz.
-                        She kinda has a lot going on so don't be suprised if there
-                        is stuff you don't know.
+                        She kinda has a lot going on so don&apos;t be suprised if there
+                        is stuff you don&apos;t know.
                     </Text>
                     <Button
                         colorScheme={'jordan.100'}
