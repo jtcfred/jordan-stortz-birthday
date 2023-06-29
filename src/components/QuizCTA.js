@@ -21,7 +21,7 @@ export default function QuizCTA({ handleClick }) {
                         fontSize={{ base: '4xl', sm: '5xl', md: '6xl', lg: '100px' }}
                         lineHeight={'110%'}
                         color="jordan.300">
-                        It&apos;s time for <br />
+                        It&apos;s time for<br/>
                         <Text as={'span'} color={'jordan.100'}>
                             Jordan&apos;s Birthday Quiz
                         </Text>
