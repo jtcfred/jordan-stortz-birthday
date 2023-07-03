@@ -49,7 +49,7 @@ export default function SignupCard() {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/Wishes', {
+      const response = await fetch('https://jordan-stortz-birthday.vercel.app/api/Wishes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
