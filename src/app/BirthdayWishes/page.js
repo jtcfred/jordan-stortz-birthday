@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from "react"
 import {
   Box,
-  Flex,
+  Link,
   Heading,
   Text,
   Stack,
   Container,
   chakra,
 } from '@chakra-ui/react';
-
+import NextLink from 'next/link';
 
 const Testimonial = ({ children }) => {
   return <Box>{children}</Box>;
@@ -85,6 +85,9 @@ export default function WithSpeechBubbles() {
           <Text color="jordan.300">
             Jordan fans have set aside their differences to come together and wish Jordan a Happy Birthday!
           </Text>
+          <Text align={'center'}>
+                Want to partake? <Link color={'blue.400'} as={NextLink} href="/BirthdayWishes/WishSubmission">Add your wish!</Link>
+              </Text>
         </Stack>
         <Stack
           direction={{ base: 'column', md: 'row' }}

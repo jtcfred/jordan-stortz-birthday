@@ -89,7 +89,10 @@ export default function Navbar() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
+                <MenuItem>
+                  <Link as={NextLink} href="/BirthdayWishes/WishSubmission">Wish submission
+                  </Link>
+                </MenuItem>
                 <MenuDivider/>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
