@@ -5,7 +5,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  InputGroup,
+  chakra,
   HStack,
   InputRightElement,
   Stack,
@@ -29,14 +29,6 @@ export default function SignupCard() {
 
   const { handleSubmit, register, formState: { errors } } = useForm();
 
-  function validateName(value) {
-    if (!value) {
-      return "Name is required";
-    } else if (value == "Jackson" || value == "Jackson Cozzi") {
-      return "Don't impersonate me you stupid fuck";
-    } else return true;
-  }
-
 
   const mySubmission = async (values) => {
     const { firstName, authorTitle, header, birthdayWish } = values;
@@ -59,14 +51,14 @@ export default function SignupCard() {
 
       if (response.ok) {
         // Testimonial added successfully
-        alert('Testimonial added successfully');
+        alert('Birthday wish successfully added :D');
       } else {
         // Failed to add testimonial
-        alert('Failed to add testimonial');
+        alert('Either you broke my code or I wrote it shittily');
       }
     } catch (error) {
       console.error('Error adding testimonial:', error);
-      alert('Failed to add testimonial');
+      alert('Either you broke my code or I wrote it shittily');
     }
   };
 
@@ -76,27 +68,28 @@ export default function SignupCard() {
       minH={'100vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
+      bg="jordan.200">
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'}>
-            Submit your birthday wish
+          <Heading fontSize={'4xl'} textAlign={'center'} color="jordan.100">
+            Submit your <chakra.span color="jordan.300">birthday wish</chakra.span>
           </Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
+          <Text fontSize={'lg'} color="white">
             When you click the button on the bottom, it will be added to the page
           </Text>
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
+          bg="jordan.100"
           boxShadow={'lg'}
           p={8}>
-          <Stack as="form" spacing={4} onSubmit={handleSubmit(mySubmission)}>
+          <Stack as="form" spacing={4} onSubmit={handleSubmit(mySubmission)} color="jordan.200" borderColor="jordan.200">
             <HStack>
               <Box>
                 <FormControl id="firstName" isRequired isInvalid={errors.firstName}>
                   <FormLabel>Name</FormLabel>
                   <Input
+                    borderColor="black"
                     type="text"
                     placeholder="Jackson"
                     {...register('firstName', { required: 'Name is required' })}
@@ -107,6 +100,7 @@ export default function SignupCard() {
                 <FormControl isRequired isInvalid={errors.authorTitle}>
                   <FormLabel>Author Title</FormLabel>
                   <Input
+                    borderColor="black"
                     type="text"
                     placeholder="Jordan's Boyfriend"
                     {...register('authorTitle', { required: 'Author Title is required' })}
@@ -117,6 +111,7 @@ export default function SignupCard() {
             <FormControl isRequired isInvalid={errors.header}>
               <FormLabel>Header</FormLabel>
               <Input
+                borderColor="black"
                 type="text"
                 placeholder="10/10 Girlfriend"
                 {...register('header', { required: 'Header is required' })}
@@ -125,6 +120,7 @@ export default function SignupCard() {
             <FormControl isRequired isInvalid={errors.birthdayWish}>
               <FormLabel>Birthday Wish</FormLabel>
               <Input
+                borderColor="black"
                 type="text"
                 {...register('birthdayWish', { required: 'Birthday Wish is required' })}
               />
@@ -134,10 +130,10 @@ export default function SignupCard() {
                 type="submit"
                 loadingText="Submitting"
                 size="lg"
-                bg={'blue.400'}
+                bg={'jordan.200'}
                 color={'white'}
                 _hover={{
-                  bg: 'blue.500',
+                  bg: 'jordan.300',
                 }}
               >
                 Submit Wish

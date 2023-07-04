@@ -82,7 +82,7 @@ export default function WithSpeechBubbles() {
           <Heading>
             Jordan Fans <chakra.span color="jordan.300">Unite</chakra.span>
           </Heading>
-          <Text color="jordan.300">
+          <Text color="white">
             Jordan fans have set aside their differences to come together and wish Jordan a Happy Birthday!
           </Text>
           <Text align={'center'}>
