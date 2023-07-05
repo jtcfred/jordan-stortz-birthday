@@ -54,11 +54,11 @@ export default function SignupCard() {
         alert('Birthday wish successfully added :D');
       } else {
         // Failed to add testimonial
-        alert('Either you broke my code or I wrote it shittily');
+        alert('got a bad response from http');
       }
     } catch (error) {
       console.error('Error adding testimonial:', error);
-      alert('Either you broke my code or I wrote it shittily');
+      alert('the try block that fetches the post caught an error');
     }
   };
 

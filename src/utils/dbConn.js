@@ -1,44 +1,32 @@
-import mongoose from "mongoose"
+import dotenv from 'dotenv';
+import {MongoClient} from "mongodb";
 
-const MONGODB_URL = process.env.MONGODB_URI;
+dotenv.config();
+const url = process.env.MONGODB_URI;
 
-if (!MONGODB_URL) {
-    throw new Error(
-        "Please define the MONGODB_URI environment variable inside .env.local"
-    )
+let cachedClient = null;
+
+export async function connectToDatabase() {
+  if (cachedClient && cachedClient.isConnected()) {
+    // If a client connection is already established, return the existing client
+    return cachedClient;
+  }
+
+  // Create a new MongoClient instance
+  const client = new MongoClient(url);
+
+  try {
+    // Connect to the MongoDB server
+    await client.connect();
+    console.log('Connected successfully to the database');
+    const db = client.db();
+    
+    // Cache the client instance for future use
+    cachedClient = client;
+
+    return db;
+  } catch (error) {
+    console.error('Error connecting to the database:', error);
+    throw error;
+  }
 }
-
-let cached = global.mongoose;
-
-if (!cached) {
-    cached = global.mongoose = {con: null, promise: null}
-}
-
-const dbConnect = async () => {
-    if (cached.conn) {
-        return cached.conn;
-    }
-
-
-// If a connection does not exist, we check if a promise is already in progress. If a promise is already in progress, we wait for it to resolve to get the connection
-    if (!cached.promise) {
-        const opts = {
-            bufferCommands : false
-        };
-
-        cached.promise = mongoose.connect(MONGODB_URL, opts).then((mongoose) => {
-            return mongoose
-        })
-    }
-
-    try {
-        cached.conn = await cached.promise;
-    } catch (e) {
-        cached.promise = null;
-        throw e;
-    }
-
-    return cached.conn;
-}
-
-export default dbConnect;

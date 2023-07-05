@@ -1,72 +1,36 @@
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
-import Wish from '@/models/wish';
-import dbConnect from '@/utils/dbConn';
+import { NextResponse } from 'next/server'
+import { connectToDatabase } from '@/utils/dbConn';
 
-dotenv.config();
-const URI = process.env.MONGODB_URI
-const options = {}
-const client = new MongoClient(URI);
+const db = await connectToDatabase()
+const collection = db.collection("Birthday_Wishes")
 
-async function connectToDatabase() {
+
+export async function GET() {
   try {
-    await client.connect();
-    console.log('Connected to MongoDB Atlas');
-  } catch (error) {
-    console.error('Failed to connect to MongoDB Atlas', error);
+    const wishes = await collection.find({}).toArray();
+    return NextResponse.json(wishes)
+  } catch {
+    return NextResponse.json('error', {status: 500})
   }
 }
 
-connectToDatabase();
-
-// const testimonials = [
-//     {
-//       heading: '10/10 Girlfriend',
-//       text: 'Happy Birthday Jordan! I am so lucky to be with you! I hope your birthday is epic :D',
-//       name: 'Jackson',
-//       title: 'Jordan\'s Beautiful Boyfriend',
-//     },
-//     {
-//       heading: 'Dirty Broad',
-//       text: 'Happy birthday old woman :)',
-//       name: 'Rowan',
-//       title: 'Jackson\'s Boyfriend',
-//     },
-//     {
-//       heading: 'She aight I guess',
-//       text: 'She let me borrow a pencil once',
-//       name: 'Harry Potter',
-//       title: 'Imaginary Friend',
-//     },
-//   ];
-
-
-
-export async function GET(req, res) {
+export async function POST(req) {
   try {
-    const wishes = await Wish.find();
-    res.status(200).json(wishes);
+    console.log("post req received")
+    const data = await req.json();
+    console.log("data recieved")
+    const newWish = {
+      heading: data.heading,
+      text: data.text,
+      name: data.name,
+      title: data.title,
+    };
+    console.log("wish created: ", newWish)
+    await collection.insertOne(newWish)
+    console.log("wish inserted")
+    return NextResponse.json(newWish)
   } catch (error) {
-    console.error('Error retrieving wishes:', error);
-    res.status(500).json('Failed to retrieve wishes');
-  }
-}
-
-export async function POST(req, res) {
-  const { heading, text, name, title } = req.body;
-
-  try {
-    const newWish = new Wish({
-      heading,
-      text,
-      name,
-      title,
-    });
-    await newWish.save();
-    res.status(201).json('Birthday wish added successfully :D');
-  } catch (error) {
-    console.error('Error adding wish:', error);
-    res.status(500).json('Failed to add wish');
+    return NextResponse.json({error: error.message}, {status: 500})
   }
 }
 
