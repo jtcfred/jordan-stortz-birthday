@@ -5,5 +5,5 @@
 ???????5.  Change pictures to add jordan all around
 ???????6.  Add loading screens
 7.  Make it phase through different wishes on large screens
-8.  Add more quiz questions
+-------8.  Add more quiz questions
 9.  Make it so it tells you if your answer was correct
