@@ -100,7 +100,7 @@ export default function Navbar() {
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem>
-                  <Link as={NextLink} href="">Spotify Playlist</Link>
+                  <Link as={NextLink} href="https://open.spotify.com/playlist/6qTdcLQoKp3feEonH3ZQNA?si=f1242fe4e7b948b0&pt=86233f05f8b2e9086deb2a5ea81f16ef" target="_blank" rel="noopener noreferrer">Spotify Playlist Colab</Link>
                 </MenuItem>
               </MenuList>
             </Menu>
