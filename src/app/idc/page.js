@@ -24,7 +24,7 @@ export default function IDontCare() {
                         lineHeight={'110%'}
                         color="jordan.300">
                         <br/>
-                        <Text as={'span'} color={'jordan.100'} fontSize={{ base: '4xl', sm: '5xl', md: '6xl', lg: '100px' }}>I don't care 
+                        <Text as={'span'} color={'jordan.100'} fontSize={{ base: '4xl', sm: '5xl', md: '6xl', lg: '100px' }}>I don&apos;t care 
                         </Text>
                         <br></br>
                         if you are having problems
