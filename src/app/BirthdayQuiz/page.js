@@ -4,7 +4,7 @@ import { Flex, Box, Card, CardHeader, CardBody, Heading, Container, Button, Text
 import QuizCTA from "@/components/QuizCTA"
 import React, { useState } from "react"
 import data from "./data.js"
-import JordanStats from '@/components/Stats.js'
+import NextLink from 'next/link';
 
 export default function BirthdayQuiz() {
   
@@ -139,6 +139,9 @@ const onAnswerSelected = (answer, idx) => {
                     location.reload();
                   }}>
                     Retry Quiz
+                  </Button>
+                  <Button as={NextLink} bg="jordan.100" color="jordan.200" justifyContent="center" m={{base: "3"}} _hover={{bg: "jordan.300", transform: "scale(1.1)"}} href="/BirthdayQuiz/AnswerKey">
+                    Answer Key
                   </Button>
                 </Flex>
               </>
