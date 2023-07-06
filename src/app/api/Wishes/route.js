@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { connectToDatabase } from '@/utils/dbConn';
 
-const db = await connectToDatabase()
+const client = await connectToDatabase()
+const db = client.db("Jordans_Birthday")
 const collection = db.collection("Birthday_Wishes")
 
 
