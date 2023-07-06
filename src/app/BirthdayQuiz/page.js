@@ -119,7 +119,7 @@ const onAnswerSelected = (answer, idx) => {
                 </>
                 ) : (
               <>
-                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>Overall {(result.score / (questions.length * 5)) * 100}%</Heading>
+                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>Overall {((result.score / (questions.length * 5)) * 100).toFixed(2)}%</Heading>
                 <Box bg="jordan.100" color="jordan.200" borderRadius={"lg"}>
                   <Text p="3" fontSize="xl">
                     Total Questions: {questions.length}

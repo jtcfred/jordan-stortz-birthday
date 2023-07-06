@@ -13,14 +13,14 @@ import {
 const milestones = [
     {
         id: 1,
-        date: 'October 30, 2022',
-        title: 'Monke',
-        description: `Alex was not lying. THERE WAS A MONKEY AT THE HALLOWEEN PARTY`
+        date: 'November 3, 2022',
+        title: 'Wingstop Era',
+        description: `Jordan and I were getting Wingstop every week and mukbanging in the car. This was a time of full bellies and poor health`
     },
     {
         id: 2,
         date: 'December 22, 2022',
-        title: 'Graduation',
+        title: 'Graduation Era',
         description: `Jordan Graduated with her first college degree. Wowza girlboss pussy slay boots the house down purr yass queen!`
     },
     {
@@ -32,17 +32,17 @@ const milestones = [
     },
     {
         id: 4,
-        date: 'March 12, 2023',
-        title: 'Bachira Discovery',
+        date: 'May 25, 2023',
+        title: 'Gym Era',
         description:
-            'Jordan discovers Bachira from Bluelock and her life is then changed forever and I have a new fictional man to worry about'
+            'Jordan and I start going to the gym to get yolked and shredded and diced'
     },
     {
         id: 5,
         date: 'July 1, 2023',
         title: 'Birthday Time',
         description:
-            'Time for another epic birthday B) Everybody say Happy Birthday Jordan'
+            'Time to run it back for another epic birthday B) Everybody say Happy Birthday Jordan'
     }
 ];
 
@@ -52,7 +52,7 @@ const Timeline = () => {
 
     return (
         <Container maxWidth="7xl" p={{ base: 2, sm: 10 }}>
-            <chakra.h3 fontSize="4xl" fontWeight="bold" mb={18} textAlign="center" color="jordan.100">
+            <chakra.h3 fontSize="6xl" fontWeight="bold" mb={18} textAlign="center" color="jordan.100">
                 The Jordan Timeline
             </chakra.h3>
             {milestones.map((milestone) => (

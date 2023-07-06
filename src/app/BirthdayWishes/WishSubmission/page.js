@@ -18,7 +18,8 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-
+import { useRouter } from 'next/navigation';
+import NextLink from 'next/link';
 
 export default function SignupCard() {
 
@@ -28,7 +29,7 @@ export default function SignupCard() {
   const [birthdayWish, setBirthdayWish] = useState('');
 
   const { handleSubmit, register, formState: { errors } } = useForm();
-
+  const router = useRouter()
 
   const mySubmission = async (values) => {
     const { firstName, authorTitle, header, birthdayWish } = values;
@@ -51,7 +52,7 @@ export default function SignupCard() {
 
       if (response.ok) {
         // Testimonial added successfully
-        alert('Birthday wish successfully added :D');
+        router.push('/BirthdayWishes')
       } else {
         // Failed to add testimonial
         alert('got a bad response from http');
@@ -65,13 +66,13 @@ export default function SignupCard() {
 
   return (
     <Flex
-      minH={'100vh'}
+      minH={'70vh'}
       align={'center'}
       justify={'center'}
       bg="jordan.200">
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+      <Stack spacing={8} mx={'auto'} maxW={'3xl'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'} color="jordan.100">
+          <Heading fontSize={'8xl'} textAlign={'center'} color="jordan.100">
             Submit your <chakra.span color="jordan.300">birthday wish</chakra.span>
           </Heading>
           <Text fontSize={'lg'} color="white">
@@ -141,7 +142,7 @@ export default function SignupCard() {
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Having issues? <Link color={'blue.400'}>Let me know</Link>
+                Having issues? <Link color={'blue.400'} as={NextLink} href="/idc">Let me know</Link>
               </Text>
             </Stack>
           </Stack>

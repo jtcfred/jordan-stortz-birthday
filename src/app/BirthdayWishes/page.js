@@ -8,6 +8,7 @@ import {
   Stack,
   Container,
   chakra,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
@@ -76,7 +77,7 @@ export default function WithSpeechBubbles() {
   }, []);
 
   return (
-    <Box bg="jordan.200">
+    <Box bg="jordan.200" minH="70vh">
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'} color="jordan.100">
           <Heading>
@@ -89,10 +90,7 @@ export default function WithSpeechBubbles() {
                 Want to partake? <Link color={'blue.400'} as={NextLink} href="/BirthdayWishes/WishSubmission">Add your wish!</Link>
               </Text>
         </Stack>
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          spacing={{ base: 10, md: 4, lg: 10 }}
-        >
+        <SimpleGrid minChildWidth="300px" spacing="20px">
           {wishes.map((testimonial, index) => (
             <Testimonial key={index}>
               <TestimonialContent>
@@ -107,7 +105,7 @@ export default function WithSpeechBubbles() {
               </Box>
             </Testimonial>
           ))}
-        </Stack>
+        </SimpleGrid>
       </Container>
     </Box>
   );

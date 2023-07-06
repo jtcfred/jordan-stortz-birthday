@@ -9,7 +9,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
   } from '@chakra-ui/react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+  import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
   import NextLink from "next/link"
 
 
@@ -124,13 +124,13 @@ import {
             align={{ base: 'center', md: 'center' }}>
             <Text>Written by Jackson Cozzi :)</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter />
+              <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/jacksoncozzi/'}>
+                <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube />
+              <SocialButton label={'Github'} href={'https://github.com/jtcfred'}>
+                <FaGithub />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+              <SocialButton label={'Instagram'} href={'https://instagram.com/jtcfred'}>
                 <FaInstagram />
               </SocialButton>
             </Stack>
