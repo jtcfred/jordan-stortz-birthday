@@ -6,7 +6,7 @@ import Footer from "@/components/Footer.js"
 import { ChakraProvider } from '@chakra-ui/react'
 import { CacheProvider } from '@chakra-ui/next-js'
 import { extendTheme } from "@chakra-ui/react"
-
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 const theme = extendTheme({
@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
             <Footer/>
           </ChakraProvider>
         </CacheProvider>
+        <Analytics />
       </body>
     </html>
   )
