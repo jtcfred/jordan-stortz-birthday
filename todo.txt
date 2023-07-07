@@ -1,7 +1,7 @@
 -------1.  Make it so when bday wish is submitted, it goes to the main bday wish page
 -------2.  Make it so bday wishes appear normally on the page for diff screens
-???????3.  Add spotify playlist on lil somethin somethin
--------3.  Add my personal social media links
+-------3.  Add spotify playlist on lil somethin somethin
+-------4.  Add my personal social media links
 ???????5.  Change pictures to add jordan all around
 ???????6.  Add loading screens
 7.  Make it phase through different wishes on large screens
