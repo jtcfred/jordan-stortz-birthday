@@ -8,51 +8,52 @@ import {
   Heading,
   SimpleGrid,
 } from '@chakra-ui/react';
+import Image from 'next/image'
 
 const StatsText = ({ children }) => (
-    <Text as={'span'} fontWeight={700} color={'white'}>
-      {children}
-    </Text>
-  );
-  
-  const stats = [
-    {
-      title: '10+',
-      content: (
-        <>
-          <StatsText>Squishmallows</StatsText> purchased from meandering in Targets and Walmarts
-          across South Carolina
-        </>
-      ),
-    },
-    {
-      title: '24/7',
-      content: (
-        <>
-          <StatsText>Hurting Tummy</StatsText> on account of her lactose intolerance
-          and IBS making her God&apos;s strongest soldier
-        </>
-      ),
-    },
-    {
-      title: '13%',
-      content: (
-        <>
-          <StatsText>Alcohol</StatsText> in the Chili&apos;s Margeritas that she only
-          needs one sip of to get drunk
-        </>
-      ),
-    },
-    {
-      title: '250M+',
-      content: (
-        <>
-          <StatsText>Pictures</StatsText> of Espeon and Umbreon on a certain website
-          that rhymes with &quot;mule sturdy floor&quot;
-        </>
-      ),
-    },
-  ];
+  <Text as={'span'} fontWeight={700} color={'white'}>
+    {children}
+  </Text>
+);
+
+const stats = [
+  {
+    title: '10+',
+    content: (
+      <>
+        <StatsText>Squishmallows</StatsText> purchased from meandering in Targets and Walmarts
+        across South Carolina
+      </>
+    ),
+  },
+  {
+    title: '24/7',
+    content: (
+      <>
+        <StatsText>Hurting Tummy</StatsText> on account of her lactose intolerance
+        and IBS making her God&apos;s strongest soldier
+      </>
+    ),
+  },
+  {
+    title: '13%',
+    content: (
+      <>
+        <StatsText>Alcohol</StatsText> in the Chili&apos;s Margeritas that she only
+        needs one sip of to get drunk
+      </>
+    ),
+  },
+  {
+    title: '250M+',
+    content: (
+      <>
+        <StatsText>Pictures</StatsText> of Espeon and Umbreon on a certain website
+        that rhymes with &quot;mule sturdy floor&quot;
+      </>
+    ),
+  },
+];
 
 
 export default function JordanStats() {
@@ -105,7 +106,11 @@ export default function JordanStats() {
               ))}
             </SimpleGrid>
           </Stack>
-          <Flex flex={1} />
+          <Flex flex={1} mr="auto" ml="auto" align="center" display={{base: "none", lg: "flex"}}>
+            <Box mr="auto" ml="auto">
+              <Image src="/AllukaSimba.jpg" width={400} height={250} alt="cutest dog in the world" />
+            </Box>
+          </Flex>
         </Stack>
       </Container>
     </Box>
