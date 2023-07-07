@@ -7,7 +7,6 @@ import {
     Button,
     Stack,
 } from '@chakra-ui/react';
-import BirthdayQuiz from '../BirthdayQuiz/page';
 
 export default function IDontCare() {
     return (
