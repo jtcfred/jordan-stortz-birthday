@@ -9,6 +9,7 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 import Image from 'next/image'
+import AllukaSimba from "../../public/AllukaSimba.jpg"
 
 const StatsText = ({ children }) => (
   <Text as={'span'} fontWeight={700} color={'white'}>
@@ -108,7 +109,7 @@ export default function JordanStats() {
           </Stack>
           <Flex flex={1} mr="auto" ml="auto" align="center" display={{base: "none", lg: "flex"}}>
             <Box mr="auto" ml="auto">
-              <Image src="/AllukaSimba.jpg" width={400} height={250} alt="cutest dog in the world" />
+              <Image src={AllukaSimba} width={400} height={250} alt="cutest dog in the world" placeholder="blur"/>
             </Box>
           </Flex>
         </Stack>

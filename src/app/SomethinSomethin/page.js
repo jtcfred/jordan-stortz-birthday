@@ -2,6 +2,7 @@
 import { Box, Heading, Stack, Flex, Container, Text, Button } from '@chakra-ui/react'
 import NextLink from 'next/link';
 import Image from 'next/image'
+import JordanGriddy from "../../../public/JordanGriddy.gif"
 
 export default function SpotifyPage() {
   return (
@@ -52,7 +53,7 @@ export default function SpotifyPage() {
             </Box>
         </Container>
             <Box display={{base:"none", lg:"block"}} p="3" borderStyle="solid" borderWidth={2} borderColor="jordan.300" borderRadius="12px">
-              <Image src="/JordanGriddy.gif" width={300} height={100} alt="Jordan hitting that mfing griddy"/>
+              <Image src={JordanGriddy} width={300} height={100} alt="Jordan hitting that mfing griddy"/>
             </Box>
       </Flex>
     </main>

@@ -8,12 +8,14 @@ import {
     Flex,
 } from '@chakra-ui/react';
 import Image from 'next/image'
+import JordanBoob from "../../public/JordanBoob.png"
+import JordanTraffic from "../../public/JordanTraffic.png"
 
 export default function QuizCTA({ handleClick }) {
     return (
         <Flex justify="space-around" maxW="7xl" align="center" ml="auto" mr="auto">
             <Box display={{base:"none", lg:"block"}} p="3" borderStyle="solid" borderWidth={2} borderColor="jordan.300" borderRadius="12px">
-                <Image src="/JordanBoob.png" width={600} height={250} alt="Jordan choking on a banana"/>
+                <Image src={JordanBoob} width={600} height={250} alt="Jordan choking on a banana" placeholder="blur"/>
             </Box>
             <Container maxW={'3xl'} minH={"70vh"}>
                 <Stack
@@ -56,7 +58,7 @@ export default function QuizCTA({ handleClick }) {
                 </Stack>
             </Container>
             <Box display={{base:"none", lg:"block"}} p="3" borderStyle="solid" borderWidth={2} borderColor="jordan.300" borderRadius="12px">
-                <Image src="/JordanTraffic.png" width={500} height={250} alt="Jordan in a traffic cone suit"/>
+                <Image src={JordanTraffic} width={500} height={250} alt="Jordan in a traffic cone suit" placeholder="blur"/>
             </Box>
         </Flex>
     );
