@@ -45,6 +45,8 @@ const Quiz = () => {
 
   const {questions} = data;
   const {question, answers, correctAnswer} = questions[activeQuestion];
+  let daTotal = 0;
+  let statement;
 
 const onAnswerSelected = (answer, idx) => {
   setChecked(true);
@@ -119,7 +121,17 @@ const onAnswerSelected = (answer, idx) => {
                 </>
                 ) : (
               <>
-                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>Overall {((result.score / (questions.length * 5)) * 100).toFixed(2)}%</Heading>
+                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>
+                  Overall {daTotal = ((result.score / (questions.length * 5)) * 100).toFixed(2)}%
+                </Heading>
+                <Heading size="lg" color="jordan.300" textAlign={"center"} pb={4}>
+                  {
+                    daTotal >= 90 ? "You know too much about Jordan, I will kill you" : 
+                    daTotal >= 80 ? "You seem to know a decent bit about Jordan, but you could improve" :
+                    daTotal >= 70 ? "You don't seem to quite understand the Jordan Lore" :
+                    "You failed, are you even one of Jordan's friends??? like bruh you just got a D"
+                  }
+                </Heading>
                 <Box bg="jordan.100" color="jordan.200" borderRadius={"lg"}>
                   <Text p="3" fontSize="xl">
                     Total Questions: {questions.length}
